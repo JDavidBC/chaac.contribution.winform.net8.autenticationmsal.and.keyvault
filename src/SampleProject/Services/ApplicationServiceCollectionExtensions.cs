@@ -27,16 +27,10 @@ public static class ApplicationServiceCollectionExtensions
 
         //  services.AddSingleton<ISettingsService, SettingsService>();
 
-        // Registrar la conexión a la base de datos como singleton o transient según diseño
+        // Registrar la conexiÃ³n a la base de datos como singleton o transient segÃºn diseÃ±o
         services.AddTransient<IDbConnection>(provider =>
         {
-
-            //var authService = provider.GetRequiredService<IAuthService>();
-            //// Aquí ya deberías estar logueado
-            //var connectionString = authService.GetSecretAsync("BabilafuenteSqlConnection").GetAwaiter().GetResult();
-            var connectionString = auth.GetSecretAsync("BabilafuenteSqlConnection").GetAwaiter().GetResult();
-
-            //  var connectionString = configuration["BabilafuenteSqlConnection"];
+            var connectionString = auth.GetSecretAsync("SqlConnection").GetAwaiter().GetResult();
             return new SqlConnection(connectionString);
         });
 
