@@ -34,13 +34,6 @@ public static class ApplicationServiceCollectionExtensions
             return new SqlConnection(connectionString);
         });
 
-
-
-
-        // Register your application services here, for example:
-        // services.AddTransient<IMyService, MyService>();
-        // You can use the configuration parameter as needed.
-
         services.AddSingleton<Form1>(); // si quieres que siempre sea la misma ventana principal
 
         return services;
