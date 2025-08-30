@@ -1,0 +1,1 @@
+# chaac.contribution.winform.net8.autenticationmsal.and.keyvault
